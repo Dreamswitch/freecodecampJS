@@ -81,3 +81,9 @@ function sumFibs(num) {
   }
   return result;
 }
+
+//exo 13 freecodecamp
+function sumPrimes(num) {
+  const tab = [...Array(num + 1).keys()].slice(1);
+  return tab.filter(e => e <= 2 || tab.slice(1, e - 1).every(f => !Number.isInteger(e / f))).reduce((a, b) => a + b) - 1;
+}
