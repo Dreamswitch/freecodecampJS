@@ -70,3 +70,14 @@ function uniteUnique(...arr) {
 function convertHTML(str) {
   return str.replaceAll(/&/g, "&amp;").replaceAll(/</g, "&lt;").replaceAll(/>/g, "&gt;").replaceAll(/"/g, "&quot;").replaceAll(/'/g, "&apos;");
 }
+
+//exo 12 freecodecamp
+function sumFibs(num) {
+  let tab = [0, 1];
+  let result = 1;
+  for (let i = tab[tab.length - 1]; i <= num; i = tab[tab.length - 1] + tab[tab.length - 2]) {
+    tab.push(i);
+    if (i % 2 !== 0) result += i;
+  }
+  return result;
+}
