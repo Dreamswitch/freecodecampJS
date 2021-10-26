@@ -87,3 +87,12 @@ function sumPrimes(num) {
   const tab = [...Array(num + 1).keys()].slice(1);
   return tab.filter(e => e <= 2 || tab.slice(1, e - 1).every(f => !Number.isInteger(e / f))).reduce((a, b) => a + b) - 1;
 }
+
+//exo 14 freecodecamp
+function smallestCommons(arr) {
+  const [min, max] = arr.sort((a, b) => a - b);
+  const range = [...new Array(max + 1).keys()].slice(min);
+  const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b); //if "a%b" is equal to "a" we reverse "a" and "b" , return the last known value of "a" before "b" is equal to "0"
+  const lcm = (a, b) => a * b / gcd(a, b);
+  return range.reduce((multiple, curr) => lcm(multiple, curr));
+}
