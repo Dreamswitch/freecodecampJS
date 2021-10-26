@@ -96,3 +96,10 @@ function smallestCommons(arr) {
   const lcm = (a, b) => a * b / gcd(a, b);
   return range.reduce((multiple, curr) => lcm(multiple, curr));
 }
+
+// exo 15 freecodecamp
+function dropElements(arr, func) {
+  if (arr.length === 0) return [];
+  if (func(arr[0])) return arr;
+  else return dropElements(arr.slice(1), func);
+}
