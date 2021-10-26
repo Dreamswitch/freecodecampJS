@@ -103,3 +103,8 @@ function dropElements(arr, func) {
   if (func(arr[0])) return arr;
   else return dropElements(arr.slice(1), func);
 }
+
+// exo 16 freecodecamp
+function steamrollArray(arr) {
+  return arr.join(",").split(",").filter(e => e !== "").map(e => isNaN(e) ? e == "[object Object]" ? {} : e : +e);
+}
