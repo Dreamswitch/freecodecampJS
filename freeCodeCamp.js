@@ -118,3 +118,16 @@ function binaryAgent(str) {
 function truthCheck(collection, pre) {
   return collection.every(e => e[pre] ? true : false);
 }
+
+// exo 19 freecodecamp
+function addTogether(...args) {
+  if (args.length > 1) {
+    return args.every(e => typeof e === "number") ? args.reduce((a, b) => a + b) : undefined;
+  } else {
+    if (typeof args[0] !== "number") return undefined;
+    return function (c) {
+      args = [...args, c];
+      return args.every(e => typeof e === "number") ? args.reduce((a, b) => a + b) : undefined;
+    };
+  }
+}
