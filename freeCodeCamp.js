@@ -131,3 +131,38 @@ function addTogether(...args) {
     };
   }
 }
+// exo 20 freecodecamp
+var Person = function (firstAndLast) {
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  let fullName = firstAndLast;
+  this.getFirstName = function () {
+    return fullName.split(' ')[0];
+  };
+  this.getLastName = function () {
+    return fullName.split(' ')[1];
+  };
+  this.getFullName = function () {
+    return fullName;
+  };
+  this.setFirstName = function (name) {
+    fullName = [name, fullName.split(' ')[1]].join(' ');
+  };
+  this.setLastName = function (name) {
+    fullName = [fullName.split(' ')[0], name].join(' ');
+  };
+  this.setFullName = function (name) {
+    fullName = name;
+  };
+};
+
+//exo 21 freecodecamp
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  return arr.map(({ name, avgAlt }) => {
+    const distance = earthRadius + avgAlt;
+    const orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt((distance ** 3) / GM));
+    return { name, orbitalPeriod };
+  });
+}
