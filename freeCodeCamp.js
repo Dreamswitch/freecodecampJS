@@ -108,3 +108,8 @@ function dropElements(arr, func) {
 function steamrollArray(arr) {
   return arr.join(",").split(",").filter(e => e !== "").map(e => isNaN(e) ? e == "[object Object]" ? {} : e : +e);
 }
+
+//exo 17 freecodecamp
+function binaryAgent(str) {
+  return str.split(" ").map(e => String.fromCharCode(parseInt(e, 2))).join('');
+}
