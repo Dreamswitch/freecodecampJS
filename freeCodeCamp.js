@@ -113,3 +113,8 @@ function steamrollArray(arr) {
 function binaryAgent(str) {
   return str.split(" ").map(e => String.fromCharCode(parseInt(e, 2))).join('');
 }
+
+//exo 18 freecodecamp
+function truthCheck(collection, pre) {
+  return collection.every(e => e[pre] ? true : false);
+}
