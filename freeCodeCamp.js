@@ -166,3 +166,9 @@ function orbitalPeriod(arr) {
     return { name, orbitalPeriod };
   });
 }
+
+// test palindrome freecodecamp
+function palindrome(str) {
+  const string = str.toLowerCase().replaceAll(/[\W_]/g, "");
+  return string === string.split('').reverse().join('');
+}
